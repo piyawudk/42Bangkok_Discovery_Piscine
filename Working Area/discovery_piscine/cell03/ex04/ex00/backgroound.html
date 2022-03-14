@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="backgroound.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+
+    <body>
+        <button>Click!</button>
+    </body>
+
+    <script> 
+        $(document).ready(function(){
+            $("button").click(function(){
+                var randomColor = Math.floor(Math.random()*256*256*256).toString(16);
+                $("body").css("background-color", "#" + randomColor);
+                console.log(randomColor);
+            });
+        });
+    </script> 
+
+</html>

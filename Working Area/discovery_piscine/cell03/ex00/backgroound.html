@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="backgroound.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    </head>
+
+    <body>
+        <button onclick = "randomBG()">Click!</button>
+    </body>
+
+    <script> 
+        function randomBG() {
+            var randomColor = Math.floor(Math.random()*256*256*256).toString(16);
+            document.body.style.background = '#' + randomColor;
+            console.log(randomColor);
+        }
+    </script> 
+
+</html>

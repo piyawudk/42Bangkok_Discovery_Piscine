@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+        <style>
+            body{
+                color:white;
+                text-align:center;
+                font-size: 2em;
+                font-family: "Poppins", sans-serif;
+                background-image: linear-gradient(to right, #2b5876 0%, #4e4376  51%, #2b5876  100%);
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+
+            select {
+                color: #fff;
+                font-size:22px;
+                font-family: "Poppins", sans-serif;
+                margin: 12px;
+                background: cadetblue;
+                border: 1px solid black;
+                padding: 4px;
+                border-radius: 10px;
+                text-align: center;
+            }
+
+            input{
+                border: 0;
+                font-size:22px;
+                border-radius: 80px;
+                margin:0px auto;
+                font-family: "Poppins", sans-serif;
+            }
+
+            input[type=text] {
+                display:block;
+                color:black;
+                width: 200px;
+                text-align: center;
+                
+            }
+
+            input[type=button]{
+                width: 150px;
+                color:white;
+                padding: 4px;
+                background-image: linear-gradient(to bottom right, #4568dc, #b06ab3);
+            }
+
+            input[type=button]:active{
+                background-image: linear-gradient(to bottom right, #b06ab3, #4568dc);
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>Calculator</h1>
+        <form name="calculator">
+            <input type="text" placeholder="Input 1" id="val1">
+            <select id="oprt">
+                <option>+</option>
+                <option>-</option>
+                <option>*</option>
+                <option>/</option>
+                <option>%</option>
+            </select>
+            <input type="text" placeholder="Input 2" id="val2"><br>
+            <input type="button" onclick="calculate()" value="Try me!">
+        </form>
+        <script>
+            setInterval(function(){ 
+	            alert("Please, use me...");
+                }, 30000);
+
+            function calculate() {
+                let val1 = document.getElementById("val1").value;
+                let oprt = document.getElementById("oprt").value;
+                let val2 = document.getElementById("val2").value;
+
+                if (val1 >= 0 && val2 >= 0){
+                    if ((oprt == "/" || oprt == "%") && val2 == 0) {
+                        console.log("It's over 9000!");
+                        alert("It's over 9000!");
+                    }
+                    else {
+                        var final = val1 + oprt + val2;
+                        var ans = eval(final);
+                        console.log(ans);
+                        alert("The answer of " + final + " is\n" + ans);
+                    }
+                }
+                else {
+                    console.log("Error :(");
+                    alert("Error :(");
+                }
+            }
+        </script>
+    </body>
+</html>
